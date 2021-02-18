@@ -1,0 +1,22 @@
+<div id="loading" *ngIf="loading">
+    <h3>Loading...</h3>
+</div>
+
+<h2>Login</h2>
+
+<form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required>
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" required>
+    </mat-form-field>
+
+    <mat-checkbox (change)="toggleRemember()">Remember Me</mat-checkbox>
+
+    <button mat-raised-button color="accent" class="button" type="submit">Login</button>
+</form>
+
